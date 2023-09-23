@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        fontFamily: {
+          'sans': ['Poppins'],
+          'serif': ['Poppins'],
+          'mono': ['Poppins'],
+          'display': ['Poppins'],
+          'body': ['Poppins'],
+        },
+        container: {
+          center: true,
+        },
+        extend: {
+          colors: {
+            primary: '#64A01C',
+          }
+        }
+      }
+    }
+  </script>
+
+  <title>PMW - PUPUK KONCI</title>
+</head>
+<body>
+  <!-- Navbar -->
+  <section id="navbar" class="px-4 lg:px-0 flex container mx-auto justify-between lg:items-center pt-5" x-data="{open:false}">
+    <div class="w-36"><img src="./assets/logo.png" alt=""></div>
+    <button class="lg:hidden" x-bind:class="open ? 'hidden' : 'block' "  @click="open = !open">
+      <svg viewBox="0 0 100 80" width="40" height="40">
+        <rect width="100" height="20" rx="10"></rect>
+        <rect y="30" width="100" height="20" rx="10"></rect>
+        <rect y="60" width="100" height="20" rx="10"></rect>
+      </svg>
+    </button>
+    <div
+      x-cloak
+      x-bind:class="open ? 'block' : 'hidden' " 
+      class="absolute top-10 right-5 z-20 bg-white border-4 border-primary rounded-lg lg:rounded-none lg:border-none lg:relative lg:top-0 lg:right-0 lg:block p-5 lg:p-0"
+    >
+      <div class="relative">
+        <ul class="flex flex-col lg:flex-row gap-11 text-sm font-semibold items-center text-[#4A4B4B]">
+          <li>
+            <a href="./index.html" class="bg-primary rounded-[20px] text-white px-5 py-2 flex items-center gap-3">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.2606 4.7475C12.1908 4.68074 12.098 4.64348 12.0014 4.64348C11.9048 4.64348 11.812 4.68074 11.7422 4.7475L3.11249 12.9914C3.07584 13.0265 3.04668 13.0686 3.02678 13.1152C3.00688 13.1619 2.99665 13.2121 2.99671 13.2628L2.9953 21C2.9953 21.3978 3.15334 21.7794 3.43464 22.0607C3.71594 22.342 4.09748 22.5 4.4953 22.5H8.99999C9.1989 22.5 9.38967 22.421 9.53032 22.2803C9.67097 22.1397 9.74999 21.9489 9.74999 21.75V15.375C9.74999 15.2755 9.7895 15.1802 9.85982 15.1098C9.93015 15.0395 10.0255 15 10.125 15H13.875C13.9744 15 14.0698 15.0395 14.1402 15.1098C14.2105 15.1802 14.25 15.2755 14.25 15.375V21.75C14.25 21.9489 14.329 22.1397 14.4697 22.2803C14.6103 22.421 14.8011 22.5 15 22.5H19.5028C19.9006 22.5 20.2822 22.342 20.5635 22.0607C20.8448 21.7794 21.0028 21.3978 21.0028 21V13.2628C21.0029 13.2121 20.9926 13.1619 20.9727 13.1152C20.9528 13.0686 20.9237 13.0265 20.887 12.9914L12.2606 4.7475Z" fill="white"/>
+                <path d="M23.0114 11.4445L19.5052 8.09016V3C19.5052 2.80109 19.4262 2.61032 19.2855 2.46967C19.1449 2.32902 18.9541 2.25 18.7552 2.25H16.5052C16.3063 2.25 16.1155 2.32902 15.9748 2.46967C15.8342 2.61032 15.7552 2.80109 15.7552 3V4.5L13.0402 1.90406C12.7861 1.64719 12.4083 1.5 12 1.5C11.5931 1.5 11.2163 1.64719 10.9622 1.90453L0.991893 11.4436C0.70033 11.7248 0.663768 12.1875 0.92908 12.4922C0.995704 12.5691 1.07728 12.6316 1.16885 12.676C1.26041 12.7204 1.36005 12.7457 1.46169 12.7503C1.56334 12.755 1.66487 12.7389 1.7601 12.7031C1.85533 12.6672 1.94228 12.6124 2.01564 12.5419L11.7422 3.2475C11.812 3.18074 11.9048 3.14348 12.0014 3.14348C12.098 3.14348 12.1909 3.18074 12.2606 3.2475L21.9881 12.5419C22.1314 12.6793 22.3234 12.7543 22.5219 12.7504C22.7204 12.7465 22.9092 12.6641 23.047 12.5212C23.3349 12.2231 23.311 11.7309 23.0114 11.4445Z" fill="white"/>
+              </svg>
+              Beranda
+            </a>
+          </li>
+          <li>
+            <a href="./about.html" class="flex items-center gap-3">
+              <svg width="24" height="18" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10.5 18C10.5 18 9 18 9 16.5C9 15 10.5 10.5 16.5 10.5C22.5 10.5 24 15 24 16.5C24 18 22.5 18 22.5 18H10.5ZM16.5 9C17.6935 9 18.8381 8.52589 19.682 7.68198C20.5259 6.83807 21 5.69347 21 4.5C21 3.30653 20.5259 2.16193 19.682 1.31802C18.8381 0.474106 17.6935 0 16.5 0C15.3065 0 14.1619 0.474106 13.318 1.31802C12.4741 2.16193 12 3.30653 12 4.5C12 5.69347 12.4741 6.83807 13.318 7.68198C14.1619 8.52589 15.3065 9 16.5 9ZM7.824 18C7.60163 17.5317 7.49074 17.0183 7.5 16.5C7.5 14.4675 8.52 12.375 10.404 10.92C9.46364 10.6303 8.48392 10.4886 7.5 10.5C1.5 10.5 0 15 0 16.5C0 18 1.5 18 1.5 18H7.824ZM6.75 9C7.74456 9 8.69839 8.60491 9.40165 7.90165C10.1049 7.19839 10.5 6.24456 10.5 5.25C10.5 4.25544 10.1049 3.30161 9.40165 2.59835C8.69839 1.89509 7.74456 1.5 6.75 1.5C5.75544 1.5 4.80161 1.89509 4.09835 2.59835C3.39509 3.30161 3 4.25544 3 5.25C3 6.24456 3.39509 7.19839 4.09835 7.90165C4.80161 8.60491 5.75544 9 6.75 9Z" fill="#374151"/>
+              </svg>
+              Tentang Kami
+            </a>
+          </li>
+          <li>
+            <a href="./product.html" class="flex items-center gap-3">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.25 1.40625L21 6.28125V18.4688L11.25 23.332L1.5 18.4688V6.28125L11.25 1.40625ZM18.5742 6.75L11.25 3.09375L8.42578 4.5L15.7031 8.17969L18.5742 6.75ZM11.25 10.4062L14.0391 9.02344L6.75 5.34375L3.92578 6.75L11.25 10.4062ZM3 7.96875V17.5312L10.5 21.2812V11.7188L3 7.96875ZM12 21.2812L19.5 17.5312V7.96875L12 11.7188V21.2812Z" fill="#374151"/>
+              </svg>
+              Produk Kami
+            </a>
+          </li>
+          <li>
+            <a href="./contact.html" class="flex items-center gap-3">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="24" height="24" rx="12" fill="#374151"/>
+                <g clip-path="url(#clip0_7_392)">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M7.41361 6.38346C7.54485 6.25242 7.70243 6.15077 7.87591 6.08525C8.0494 6.01972 8.23483 5.99181 8.41992 6.00337C8.60501 6.01493 8.78553 6.06569 8.94951 6.1523C9.1135 6.2389 9.25721 6.35936 9.37111 6.50571L10.7174 8.23521C10.9641 8.55246 11.0511 8.96571 10.9536 9.35571L10.5434 10.9982C10.5222 11.0833 10.5233 11.1724 10.5467 11.2569C10.5701 11.3414 10.6149 11.4184 10.6769 11.4805L12.5196 13.3232C12.5817 13.3853 12.6589 13.4302 12.7435 13.4536C12.8282 13.477 12.9174 13.4781 13.0026 13.4567L14.6444 13.0465C14.8368 12.9983 15.0377 12.9946 15.2318 13.0355C15.4259 13.0765 15.6082 13.161 15.7649 13.2827L17.4944 14.6282C18.1161 15.112 18.1731 16.0307 17.6166 16.5865L16.8411 17.362C16.2861 17.917 15.4566 18.1607 14.6834 17.8885C12.7043 17.1921 10.9073 16.0591 9.42586 14.5735C7.94033 13.0922 6.80732 11.2955 6.11086 9.31671C5.83936 8.54421 6.08311 7.71396 6.63811 7.15896L7.41361 6.38346Z" fill="white"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_7_392">
+                <rect width="12" height="12" fill="white" transform="translate(6 6)"/>
+                </clipPath>
+                </defs>
+              </svg>
+              Hubungi
+            </a>
+          </li>
+        </ul>
+        <button x-bind:class="open ? 'block' : 'hidden' "  @click="open = false" class="text-gray-700 absolute -top-10 -right-8 font-semibold text-3xl bg-white rounded-full w-10 h-10 border-4 border-primary">X</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- hero -->
+  <section id="hero" class="pt-11 lg:pt-24 ">
+    <div class="container px-4 lg:px-0 relative">
+      <img src="./assets/konci.png" alt="title" class="lg:w-[515px]">
+      <div class="max-w-[490px] text-center text-[#515151] font-medium mt-8">
+        <p class="mb-10">Dengan bangga mempersembahkan produk kami, yaitu Pupuk Konci (Kotoran Kelinci), dalam kerangka Program Pengembangan Usaha Mahasiswa (P2MW).</p>
+        <a href="./about.html" class="bg-primary text-white px-10 py-2 rounded-2xl flex max-w-[214px] gap-2 items-center mx-auto">
+          <img src="./assets/rabbit.png" alt="">
+          <button>Selengkapnya!</button>
+        </a>
+      </div>
+    </div>
+    <div class="block lg:hidden absolute bottom-0">
+      <img src="./assets/page1.png" alt="">
+    </div>
+  </section>
+</body>
+</html>
