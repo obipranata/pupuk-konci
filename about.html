@@ -36,10 +36,10 @@
 
   <title>PMW - PUPUK KONCI</title>
 </head>
-<body>
+<body x-data="{open:false, openModal:false, src:''}">
   <!-- Navbar -->
-  <section id="navbar" class="px-4 lg:px-0 flex container mx-auto justify-between lg:items-center pt-5" x-data="{open:false}">
-    <div class="w-36"><img src="./assets/logo.png" alt=""></div>
+  <section id="navbar" class="px-4 lg:px-0 flex container mx-auto justify-between lg:items-center pt-5">
+    <div class="w-72"><img src="./assets/logo.png" alt=""></div>
     <button class="lg:hidden" x-bind:class="open ? 'hidden' : 'block' "  @click="open = !open">
       <svg viewBox="0 0 100 80" width="40" height="40">
         <rect width="100" height="20" rx="10"></rect>
@@ -109,7 +109,7 @@
           <img src="./assets/Logo-ump.png" width="66" alt="">
           <div class="border-l-4 border-primary h-16"></div>
           <div class="lg:max-w-sm">
-            <h1 class="text-primary font-bold text-xl lg:text-3xl">Universitas Muhammadiyah Papua</h1>
+            <h1 class="text-primary font-bold text-xl lg:text-3xl uppercase">Program Studi <span class="lg:text-5xl">Kewirausahaan</span></h1>
           </div>
         </div>
         <div class="mt-6 text-justify max-w-xl lg:text-base text-sm text-gray-600">
@@ -134,11 +134,11 @@
           <p>Dosen Pembimbing:</p>
           <p class="font-medium">Anita Apriani</p>
           <p class="mt-4">Tim:</p>
-          <p class="font-medium">1. Daud Enumbi (Ketua)</p>
-          <p class="font-medium">2. Yance Tebal (Anggota)</p>
-          <p class="font-medium">3. Simson Heluka (Anggota)</p>
+          <p class="font-medium">1. Manai Wisabal (Ketua)</p>
+          <p class="font-medium">2. Muhammad Chairul U (Anggota)</p>
+          <p class="font-medium">3. Febri Lani (Anggota)</p>
         </div>
-        <div class="absolute -bottom-10 right-24">
+        <div class="absolute -bottom-14 right-24">
           <img src="./assets/shape.svg" alt="">
         </div>
       </div>
@@ -152,56 +152,72 @@
   <section id="activity" class="pt-12">
     <div class="container px-4 lg:px-0">
       <h1 class="text-primary font-bold text-2xl lg:text-4xl text-center">KLEIDOSKOP KEGIATAN</h1>
-      
-      <div class="flex justify-center items-center mt-7">
-        <div class="relative">
-          <div class="mySlides transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none">
-            <img src="./assets/kegiatan/1.jpeg" class="lg:max-w-lg max-h-screen rounded-lg border-4 border-primary" alt="">
+      <div class="flex mt-7 justify-center gap-6 flex-wrap">
+        <a href="#" @click.prevent="src='./assets/kegiatan/1.jpeg'; openModal=true; ">
+          <div class="w-32 h-32 lg:w-56 lg:h-56 border-4 border-primary rounded-lg">
+            <img src="./assets/kegiatan/1.jpeg" class="object-cover h-full w-full">
           </div>
-          <div class="mySlides transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none">
-            <img src="./assets/kegiatan/2.jpeg" class="lg:max-w-lg max-h-screen rounded-lg border-4 border-primary" alt="">
+        </a>
+        <a href="#" @click.prevent="src='./assets/kegiatan/2.jpeg'; openModal=true; ">
+          <div class="w-32 h-32 lg:w-56 lg:h-56 border-4 border-primary rounded-lg">
+            <img src="./assets/kegiatan/2.jpeg" class="object-cover h-full w-full">
           </div>
-          <div class="mySlides transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none">
-            <img src="./assets/kegiatan/3.jpeg" class="lg:max-w-lg max-h-screen rounded-lg border-4 border-primary" alt="">
+        </a>
+        <a href="#" @click.prevent="src='./assets/kegiatan/3.jpeg'; openModal=true; ">
+          <div class="w-32 h-32 lg:w-56 lg:h-56 border-4 border-primary rounded-lg">
+            <img src="./assets/kegiatan/3.jpeg" class="object-cover h-full w-full">
           </div>
-          <div class="mySlides transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none">
-            <img src="./assets/kegiatan/4.jpeg" class="lg:max-w-lg max-h-screen rounded-lg border-4 border-primary" alt="">
+        </a>
+        <a href="#" @click.prevent="src='./assets/kegiatan/4.jpeg'; openModal=true; ">
+          <div class="w-32 h-32 lg:w-56 lg:h-56 border-4 border-primary rounded-lg">
+            <img src="./assets/kegiatan/4.jpeg" class="object-cover h-full w-full">
           </div>
-          <div class="mySlides transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none">
-            <img src="./assets/kegiatan/5.jpeg" class="lg:max-w-lg max-h-screen rounded-lg border-4 border-primary" alt="">
+        </a>
+        <a href="#" @click.prevent="src='./assets/kegiatan/5.jpeg'; openModal=true; ">
+          <div class="w-32 h-32 lg:w-56 lg:h-56 border-4 border-primary rounded-lg">
+            <img src="./assets/kegiatan/5.jpeg" class="object-cover h-full w-full">
           </div>
-          <button class="left absolute -left-4 lg:-left-20 bottom-1/2 bg-white rounded-full" onclick="plusSlides(-1)">
-            <img src="./assets/icons/left.png" width="48">
-          </button>
-          <button class="right absolute -right-4 lg:-right-20 bottom-1/2 bg-white rounded-full" onclick="plusSlides(1)">
-            <img src="./assets/icons/right.png" width="48">
-          </button>
-        </div>
+        </a>
       </div>
     </div>
     <img src="./assets/page3.png" alt="" class="mt-12">
   </section>
-  <script>
-    let slideIndex = 1;
-    let rightIndex = 2;
-    let leftIndex = 3;
-    let rightSrc = './assets/peternak.png';
-    let slides = document.getElementsByClassName("mySlides");
-    showSlides(slideIndex);
-    
-    function plusSlides(n) {
-      showSlides(slideIndex += n);
-    }
-    
-    function showSlides(n) {
-      let i;
-      if (n > slides.length) {slideIndex = 1}    
-      if (n < 1) {slideIndex = slides.length}
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
-      }
-      slides[slideIndex-1].style.display = "block";  
-    }
-    </script>
+
+    <!-- Modal -->
+    <div
+        x-show="openModal"
+        style="display: none"
+        x-on:keydown.escape.prevent.stop="open = false"
+        role="dialog"
+        aria-modal="true"
+        x-id="['modal-title']"
+        :aria-labelledby="$id('modal-title')"
+        class="fixed inset-0 z-10 overflow-y-auto"
+    >
+        <!-- Overlay -->
+        <div x-show="openModal" x-transition.opacity class="fixed inset-0 bg-black bg-opacity-50"></div>
+ 
+        <!-- Panel -->
+        <div
+            x-show="openModal" x-transition
+            x-on:click="open = false"
+            class="relative flex min-h-screen items-center justify-center p-4"
+        >
+            <div
+                x-on:click.stop
+                x-trap.noscroll.inert="open"
+                class="relative max-w-2xl rounded-xl bg-[#111111] p-2 shadow-lg border border-primary"
+            >
+                <button 
+                  class="absolute -top-4 -right-4 bg-primary text-gray-700 rounded-full w-8 h-8 flex justify-center items-center text-xl font-bold"
+                  x-on:click="openModal = false"
+                >
+                  x
+                </button>
+                <!-- Content -->
+                <img x-bind:src="src" src="" class="rounded-lg mx-auto lg:max-h-screen">
+            </div>
+        </div>
+    </div>
 </body>
 </html>

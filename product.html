@@ -39,7 +39,7 @@
 <body>
   <!-- Navbar -->
   <section id="navbar" class="px-4 lg:px-0 flex container mx-auto justify-between lg:items-center pt-5" x-data="{open:false}">
-    <div class="w-36"><img src="./assets/logo.png" alt=""></div>
+    <div class="w-72"><img src="./assets/logo.png" alt=""></div>
     <button class="lg:hidden" x-bind:class="open ? 'hidden' : 'block' "  @click="open = !open">
       <svg viewBox="0 0 100 80" width="40" height="40">
         <rect width="100" height="20" rx="10"></rect>
@@ -122,7 +122,7 @@
       <div class="absolute left-10 bottom-2 lg:bottom-12">
         <img src="./assets/page4-2.png" class="w-28 lg:w-full" alt="">
       </div>
-      <div class="flex flex-col ml-auto max-w-[758px]">
+      <div class="flex flex-col ml-auto lg:max-w-[608px]">
         <h1 class="text-primary font-bold text-4xl mb-9">MANFAAT PUPUK</h1>
         <div class="flex gap-2 font-medium text-base text-gray-700 items-start mb-4">
           <img src="./assets/icons/check.svg" alt="">      
