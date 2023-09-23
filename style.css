@@ -32,14 +32,14 @@ button {
   #hero, #product{
     background: url('./assets/page1.png');
     background-repeat: no-repeat;
-    background-size: 100% calc(100vh - 100px);
-    height: calc(100vh - 100px);
+    background-size: 100% calc(100vh - 75px);
+    height: calc(100vh - 75px);
   }
 
   #about{
     background: url('./assets/page2.png');
     background-repeat: no-repeat;
-    background-size: 100% calc(100vh - 100px);
-    height: calc(100vh - 100px);
+    background-size: 100% calc(100vh - 75px);
+    height: calc(100vh - 75px);
   }
 }
